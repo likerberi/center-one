@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📊 Activity Dashboard</h1>
+            <p class="subtitle">GitHub 활동 & 블로그 포스팅 통계</p>
+        </header>
+
+        <div class="dashboard">
+            <!-- GitHub 섹션 -->
+            <section class="card">
+                <h2>🐙 GitHub Activity</h2>
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-value" id="github-commits">-</span>
+                        <span class="stat-label">Commits</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value" id="github-prs">-</span>
+                        <span class="stat-label">Pull Requests</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value" id="github-issues">-</span>
+                        <span class="stat-label">Issues</span>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="github-chart"></canvas>
+                </div>
+            </section>
+
+            <!-- 블로그 섹션 -->
+            <section class="card">
+                <h2>✍️ Blog Posts</h2>
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-value" id="blog-total">-</span>
+                        <span class="stat-label">Total Posts</span>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="blog-chart"></canvas>
+                </div>
+                <div class="recent-posts">
+                    <h3>최근 포스트</h3>
+                    <ul id="recent-posts-list"></ul>
+                </div>
+            </section>
+        </div>
+
+        <footer>
+            <p>Powered by NestJS + TypeScript</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
