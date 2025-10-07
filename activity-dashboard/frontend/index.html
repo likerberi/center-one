@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📊 Activity Dashboard</h1>
+            <p class="subtitle">GitHub & Blog Activity Tracker</p>
+        </header>
+
+        <div class="dashboard-grid">
+            <!-- GitHub Section -->
+            <section class="card github-section">
+                <h2>🐙 GitHub Activity</h2>
+                <div id="github-loading" class="loading">Loading GitHub data...</div>
+                <div id="github-error" class="error" style="display: none;"></div>
+                
+                <div id="github-stats" class="stats-container" style="display: none;">
+                    <div class="stat-box">
+                        <div class="stat-label">Public Repos</div>
+                        <div class="stat-value" id="github-repos">0</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Followers</div>
+                        <div class="stat-value" id="github-followers">0</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Following</div>
+                        <div class="stat-value" id="github-following">0</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Events (7 days)</div>
+                        <div class="stat-value" id="github-events-week">0</div>
+                    </div>
+                </div>
+
+                <div id="github-chart-container" style="display: none;">
+                    <h3>Activity Overview</h3>
+                    <canvas id="github-chart"></canvas>
+                </div>
+
+                <div id="github-repos-list" style="display: none;">
+                    <h3>Top Repositories</h3>
+                    <ul id="top-repos"></ul>
+                </div>
+            </section>
+
+            <!-- Blog Section -->
+            <section class="card blog-section">
+                <h2>📝 Blog Activity</h2>
+                <div id="blog-loading" class="loading">Loading blog data...</div>
+                <div id="blog-error" class="error" style="display: none;"></div>
+                
+                <div id="blog-stats" class="stats-container" style="display: none;">
+                    <div class="stat-box">
+                        <div class="stat-label">Total Posts</div>
+                        <div class="stat-value" id="blog-total">0</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Recent Posts (30 days)</div>
+                        <div class="stat-value" id="blog-recent">0</div>
+                    </div>
+                </div>
+
+                <div id="blog-chart-container" style="display: none;">
+                    <h3>Blog Stats</h3>
+                    <canvas id="blog-chart"></canvas>
+                </div>
+
+                <div id="blog-posts-list" style="display: none;">
+                    <h3>Latest Posts</h3>
+                    <ul id="latest-posts"></ul>
+                </div>
+            </section>
+        </div>
+
+        <!-- Combined Activity Chart -->
+        <section class="card full-width">
+            <h2>📈 Combined Activity</h2>
+            <div id="combined-chart-container">
+                <canvas id="combined-chart"></canvas>
+            </div>
+        </section>
+
+        <footer>
+            <button id="refresh-btn" class="btn-refresh">🔄 Refresh Data</button>
+            <button id="clear-cache-btn" class="btn-clear">🗑️ Clear Cache</button>
+            <p class="last-updated">Last updated: <span id="last-update-time">Never</span></p>
+        </footer>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
