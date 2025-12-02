@@ -33,6 +33,7 @@ migrate_working_dir/
 /build/
 
 # Web related
+lib/generated_plugin_registrant.dart
 
 # Symbolication related
 app.*.symbols
@@ -48,3 +49,26 @@ app.*.map.json
 # Firebase
 .firebase/
 firebase-debug.log
+
+# NestJS specific
+/dist
+/node_modules
+/tmp
+
+# Logs
+logs
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# dotenv environment variable files
+.env
+.env.development
+.env.test
+.env.production
+
+# temp directory
+.temp
+.tmp
